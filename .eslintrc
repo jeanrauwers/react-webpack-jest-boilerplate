@@ -1,8 +1,5 @@
 {
-  "extends":[
-     "eslint:recommended",
-     "plugin:react/recommended"
-  ],
+  "extends": ["eslint:recommended", "plugin:react/recommended"],
 
   "parserOptions": {
     "sourceType": "module"
@@ -11,13 +8,10 @@
   "env": {
     "es6": true,
     "browser": true,
-    "node": true,
-
+    "node": true
   },
 
   "rules": {
     "keyword-spacing": 2
   }
-
 }
-
