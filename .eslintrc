@@ -1,0 +1,26 @@
+{
+  "root": true,
+  "env": {
+    "es6": true,
+    "browser": true
+  },
+  "overrides": [
+    {
+      "files": ["*.config.js"],
+      "env": {
+        "node": true
+      }
+    },
+    {
+      "files": ["**/__tests__/**/*.*"],
+      "env": {
+        "es6": true,
+        "node": true,
+        "jest": true
+      },
+      "rules": {
+        "no-undefined": "off"
+      }
+    }
+  ]
+}
