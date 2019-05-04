@@ -3,10 +3,11 @@
   "version": "0.1.0",
   "description": "",
   "scripts": {
-    "test": "jest",
-    "test-coverage": "jest --coverage",
+    "test:coverage": "jest --coverage",
     "build": "webpack --mode=production",
-    "start": "webpack-dev-server --hot --inline"
+    "start": "webpack-dev-server --hot --inline",
+    "test": "cross-env CI=true jest --env=jsdom",
+    "lint": "eslint src"
   },
   "license": "MIT",
   "devDependencies": {
@@ -22,6 +23,7 @@
     "enzyme": "^3.9.0",
     "enzyme-adapter-react-16": "^1.12.1",
     "eslint": "^5.15.3",
+    "eslint-plugin-react": "^7.13.0",
     "html-webpack-plugin": "^4.0.0-beta.3",
     "jest": "^24.7.1",
     "mini-css-extract-plugin": "^0.6.0",
@@ -29,11 +31,13 @@
     "postcss-loader": "^3.0.0",
     "sass-loader": "^7.1.0",
     "style-loader": "^0.23.1",
+    "tar": ">=4.4.2",
     "webpack": "^4.30.0",
     "webpack-bundle-analyzer": "^3.3.2",
     "webpack-cli": "^3.3.1",
     "webpack-dev-server": "^3.3.1",
-    "tar": ">=4.4.2"
+    "cross-env": "^5.2.0",
+    "husky": "^2.2.0"
   },
   "dependencies": {
     "react": "^16.8.6",
@@ -43,6 +47,12 @@
     "moduleNameMapper": {
       "\\.(css|less|sass|scss)$": "<rootDir>/__mocks__/styleMock.js",
       "\\.(gif|ttf|eot|svg)$": "<rootDir>/__mocks__/fileMock.js"
+    }
+  },
+  "husky": {
+    "hooks": {
+      "pre-commit": "npm run lint && npm test",
+      "pre-push": "npm run lint && npm test"
     }
   }
 }

@@ -1,26 +1,23 @@
 {
-  "root": true,
+  "extends":[
+     "eslint:recommended",
+     "plugin:react/recommended"
+  ],
+
+  "parserOptions": {
+    "sourceType": "module"
+  },
+
   "env": {
     "es6": true,
-    "browser": true
+    "browser": true,
+    "node": true,
+
   },
-  "overrides": [
-    {
-      "files": ["*.config.js"],
-      "env": {
-        "node": true
-      }
-    },
-    {
-      "files": ["**/__tests__/**/*.*"],
-      "env": {
-        "es6": true,
-        "node": true,
-        "jest": true
-      },
-      "rules": {
-        "no-undefined": "off"
-      }
-    }
-  ]
+
+  "rules": {
+    "keyword-spacing": 2
+  }
+
 }
+
