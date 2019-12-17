@@ -1,2 +1,19 @@
-# react-webpack-jest-boilerplate with Enzyme
-A boilerplate for build React websites using Webpack, Jest and enzyme
+# A boilerplate for build React websites using webpack, Jest and enzyme
+
+## Development and watch
+
+```
+$ npm run dev
+```
+
+## Build
+
+```
+$ npm run build
+```
+
+## Test
+
+```
+$ npm run test
+```
