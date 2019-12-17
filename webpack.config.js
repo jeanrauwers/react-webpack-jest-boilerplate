@@ -10,6 +10,7 @@ module.exports = function(env, argv) {
 	const plugins = [new CleanWebpackPlugin()];
 
 	plugins.push(
+		// Analyzer Plugin
 		new BundleAnalyzerPlugin({
 			generateStatsFile: true,
 			analyzerMode: argv.analyze ? 'server' : 'disabled'
@@ -35,6 +36,7 @@ module.exports = function(env, argv) {
 
 	return {
 		entry: {
+			// Entry files
 			main: './src/scripts/index.js',
 			style: './src/scripts/scss/index.scss'
 		},
